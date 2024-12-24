@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Helper function to clean and preprocess text
-def preprocess_text(intput_file, output_file):
+def preprocess_text(intput_file):
     """
     Reads and preprocesses text from a file.
 
@@ -16,15 +16,18 @@ def preprocess_text(intput_file, output_file):
     with open(intput_file, 'r', encoding='utf-8') as viet_file:
         lines = viet_file.readlines()
     # Remove BOM characters and strip whitespace
-    cleaned_lines = [line.replace('\ufeff', '').strip() for line in lines if line.strip()]
+    cleaned_lines = [
+        line.replace('_', ' ').replace('\ufeff', '').strip()
+        for line in lines if line.strip()
+    ]
     # Save cleaned lines to the output file if specified
     output_folder = 'cleaned_data'
     os.makedirs(output_folder, exist_ok=True)
+    output_file = "cleaned_" + os.path.basename(intput_file)
     path_file = os.path.join(output_folder, output_file)
-    print(path_file)
     with open(path_file, 'w', encoding='utf-8') as output:
         output.write('\n'.join(cleaned_lines))
-    print(f"Cleaned lines have been saved to: {output_file}")
+    print(f"Cleaned data have been saved to: {output_file}")
     return cleaned_lines
 
 # Function to save data to an Excel file
