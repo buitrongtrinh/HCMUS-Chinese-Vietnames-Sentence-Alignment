@@ -78,10 +78,27 @@
    ```
 ---
 
-## 2. Chạy dự án
-
-1. 
-
+## 2. Chạy dự án:
+Đối với các case:
+- Data từ thầy:
+  ```bash
+  python main.py --viet_file data/viet.txt --hoa_file data/hoa.txt --threshold 0.7
+  ```
+- 4,000 dòng:
+  ```bash
+  python main.py --viet_file data/4000bible-uedin.vi-zh.vi --hoa_file data/4000shuffled_bible-uedin.vi-zh.zh --threshold 0.7
+  ```
+- 8,000 dòng:
+  ```bash
+  python main.py --viet_file data/8000bible-uedin.vi-zh.vi --hoa_file data/8000shuffled_bible-uedin.vi-zh.zh --threshold 0.7
+- 30,000 dòng:
+  ```bash
+  python main.py --viet_file data/30000bible-uedin.vi-zh.vi --hoa_file data/30000shuffled_bible-uedin.vi-zh.zh --threshold 0.7
+  ```
+- 50,000 dòng:
+  ```bash
+  python main.py --viet_file data/50000bible-uedin.vi-zh.vi --hoa_file data/50000shuffled_bible-uedin.vi-zh.zh --threshold 0.7
+  ```
 ---
 
 ## 3. Lưu ý
